@@ -1,6 +1,5 @@
 export default defineNuxtConfig({
     css: ["@/assets/scss/app.scss"],
-    ssr:false,
     app: {
         head: {
             link: [
@@ -26,7 +25,6 @@ export default defineNuxtConfig({
     //     pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
     //     },
     modules: [
-        "@nuxtjs/i18n",
         [
             "@pinia/nuxt",
             {
@@ -35,35 +33,6 @@ export default defineNuxtConfig({
         ],
     ],
     // debug: false,
-    i18n: {
-        strategy: "prefix_except_default",
-        defaultLocale: "fr",
-        locales: [
-            {
-                icon: "flag-icon-us",
-                code: "en",
-                name: "English",
-                short: "(US)"
-            },
-            {
-                icon: "flag-icon-fr",
-                code: "fr",
-                name: "Français"
-            },
-            {
-                icon: "flag-icon-es",
-                code: "es",
-                name: "Español"
-            },
-            {
-                icon: "flag-icon-pt",
-                short: "(BR)",
-                code: "pt",
-                name: "Português"
-            }
-        ],
-        vueI18n: "./i18n.config.ts"
-    },
     plugins: [
         { src: "~/plugins/plugins.js", mode: "client" },
         { src: "./plugins/useBootstrap.client.ts", mode: "client" },

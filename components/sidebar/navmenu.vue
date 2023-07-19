@@ -19,7 +19,7 @@
         :class="{ 'sidebar-main-title': menuItem.type == 'headtitle', 'hoverd': menuItem.active == true && this.layoutobject.split(' ').includes('horizontal-wrapper') }, menuItem.showPin ? 'pined' : ''">
 
         <div v-if="menuItem.type == 'headtitle'">
-          <h6 class="lan-1">{{ $t(menuItem.headTitle1) }}</h6>
+          <h6 class="lan-1">{{ menuItem.headTitle1}}</h6>
 
         </div>
 
@@ -36,7 +36,7 @@
           </svg>
 
           <span class="lan-3">
-            {{ $t(menuItem.title) }}
+            {{ (menuItem.title) }}
           </span>
           <div class="according-menu" v-if="menuItem.children">
             <i class="fa fa-angle-right pull-right"></i>
@@ -54,7 +54,7 @@
           </svg>
 
           <span>
-            {{ $t(menuItem.title) }}
+            {{ (menuItem.title) }}
           </span>
           <i class="fa fa-angle-right pull-right" v-if="menuItem.children"></i>
         </router-link>
@@ -69,7 +69,7 @@
           </svg>
 
           <span>
-            {{ $t(menuItem.title) }}
+            {{ (menuItem.title) }}
           </span>
           <i class="fa fa-angle-right pull-right" v-if="menuItem.children"></i>
         </a>
@@ -84,7 +84,7 @@
             <use :xlink:href="('/svg/icon-sprite.svg') + `#${menuItem.iconf}`"></use>
           </svg>
           <span>
-            {{ $t(menuItem.title) }}
+            {{ (menuItem.title) }}
           </span>
           <i class="fa fa-angle-right pull-right" v-if="menuItem.children"></i>
         </a>
@@ -96,7 +96,7 @@
 
             <a class="lan-4" :class="{ 'active': childrenItem.active }" href="javascript:void(0)"
               v-if="childrenItem.type == 'sub'" @click="setNavActive(childrenItem, index)">
-              {{ $t(childrenItem.title) }}
+              {{ (childrenItem.title) }}
               <label :class="'badge badge-' + childrenItem.badgeType + ' pull-right'" v-if="childrenItem.badgeType">{{
                 childrenItem.badgeValue }}</label>
               <i class="fa pull-right mt-1"
@@ -106,7 +106,7 @@
 
             <router-link class="lan-4" :class="{ 'active': childrenItem.active }" :to="childrenItem.path"
               v-if="childrenItem.type == 'link'" @click="setNavActive(childrenItem, index)" v-on:click="hidesecondmenu()">
-              {{ $t(childrenItem.title) }}
+              {{ (childrenItem.title) }}
               <label :class="'badge badge-' + childrenItem.badgeType + ' pull-right'" v-if="childrenItem.badgeType">{{
                 (childrenItem.badgeValue) }}</label>
               <i class="fa fa-angle-right pull-right mt-1" v-if="childrenItem.children"></i>
@@ -115,12 +115,12 @@
             <a :href="childrenItem.path" v-if="childrenItem.type == 'extLink'" class="submenu-title">
               {{ (childrenItem.title) }}
               <label :class="'badge badge-' + childrenItem.badgeType + ' pull-right'" v-if="childrenItem.badgeType">{{
-                $t(childrenItem.badgeValue) }}</label>
+                (childrenItem.badgeValue) }}</label>
               <i class="fa fa-angle-right pull-right mt-1" v-if="childrenItem.children"></i>
             </a>
 
             <a class="submenu-title" :href="childrenItem.path" target="_blank" v-if="childrenItem.type == 'extTabLink'">
-              {{ $t(childrenItem.title) }}
+              {{ (childrenItem.title) }}
               <label :class="'badge badge-' + childrenItem.badgeType + ' pull-right'" v-if="childrenItem.badgeType">{{
                 (childrenItem.badgeValue) }}</label>
               <i class="fa fa-angle-right pull-right mt-1" v-if="childrenItem.children"></i>
@@ -133,21 +133,21 @@
                 <router-link :class="{ 'active': childrenSubItem.active }" :to="childrenSubItem.path"
                   v-if="childrenSubItem.type == 'link'" router-link-exact-active exact v-on:click="hidesecondmenu()"
                   @click="setNavActive(childrenSubItem, index)">
-                  {{ $t(childrenSubItem.title) }}
+                  {{ (childrenSubItem.title) }}
                   <label :class="'badge badge-' + childrenSubItem.badgeType + ' pull-right'"
                     v-if="childrenSubItem.badgeType">{{ (childrenSubItem.badgeValue) }}</label>
                   <i class="fa fa-angle-right pull-right" v-if="childrenSubItem.children"></i>
                 </router-link>
 
                 <router-link :to="childrenSubItem.path" v-if="childrenSubItem.type == 'extLink'" router-link-exact-active>
-                  {{ $t(childrenSubItem.title) }}
+                  {{ (childrenSubItem.title) }}
                   <label :class="'badge badge-' + childrenSubItem.badgeType + ' pull-right'"
                     v-if="childrenSubItem.badgeType">{{ (childrenSubItem.badgeValue) }}</label>
                   <i class="fa fa-angle-right pull-right" v-if="childrenSubItem.children"></i>
                 </router-link>
 
                 <router-link :to="childrenSubItem.path" v-if="childrenSubItem.type == 'extLink'" router-link-exact-active>
-                  {{ $t(childrenSubItem.title) }}
+                  {{ (childrenSubItem.title) }}
                   <label :class="'badge badge-' + childrenSubItem.badgeType + ' pull-right'"
                     v-if="childrenSubItem.badgeType">{{ (childrenSubItem.badgeValue) }}</label>
                   <i class="fa fa-angle-right pull-right" v-if="childrenSubItem.children"></i>

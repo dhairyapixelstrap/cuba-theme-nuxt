@@ -31,7 +31,6 @@ import "bootstrap/js/dist/dropdown.js";
 // var chartist=
 // import '../node_modules/vue-chartist/index'
 // const vueChartist =
-//import { createI18n } from "vue-i18n";
 import { createPinia } from 'pinia'
 export default defineNuxtPlugin((nuxtApp) => {
     // nuxtApp.vueApp.component('quill-editor',quillEditor)
@@ -51,14 +50,6 @@ export default defineNuxtPlugin((nuxtApp) => {
         })
     );
     nuxtApp.vueApp.use(DropZone);
-    nuxtApp.vueApp.use(Vue3Tour);
-    // const i18n = createI18n({
-    //     locale: locale,
-    //     fallbackLocale: 'en',
-    //     messages,
-    //     silentTranslationWarn: true
-    //   });
-    // nuxtApp.vueApp.use(i18n)
     // nuxtApp.vueApp.use(require(vue-chartist));
     nuxtApp.vueApp.config;
     nuxtApp.vueApp.use(Lightbox);

@@ -5,7 +5,7 @@
         langLangauge }}</span></div>
     </div>
 
-    <div class="more_lang" :class="{ 'active': isActive }">
+    <!-- <div class="more_lang" :class="{ 'active': isActive }">
 
       <div class="lang" v-for="locale in availableLocales" :key="locale.code">
         <nuxt-link :to="switchLocalePath(locale.code)"> <i class="flag-icon" :class="locale.icon"></i><span
@@ -13,9 +13,7 @@
             </span></span></nuxt-link>
       </div>
 
-    </div>
-    <!-- <pre>{{ availableLocales }}</pre> -->
-
+    </div> -->
   </div>
  
 </template>
@@ -35,11 +33,11 @@ export default {
     },
 
 
-    changeLocale(locale) {
-      useLanguageStore().changeLang(locale)
-      this.$i18n.locale = locale;
+    // changeLocale(locale) {
+    //   useLanguageStore().changeLang(locale)
+    //   this.$i18n.locale = locale;
 
-    },
+    // },
   },
   computed: {
     langIcon() {
@@ -54,14 +52,15 @@ export default {
     useLanguageStore().changeLang({ code: localStorage.getItem('currentLanguage') || 'EN', icon: localStorage.getItem('currentLanguageIcon') || 'flag-icon-us' })
   },
   setup() {
-    const { locale, locales } = useI18n();
-    const switchLocalePath = useSwitchLocalePath()
-    const availableLocales = computed(() => {
-      return (locales.value).filter(i => i.code !== locale.value)
+    // const { locale, locales } = useI18n();
+    // const switchLocalePath = useSwitchLocalePath()
+    // const availableLocales = computed(() => {
+    //   return (locales.value).filter(i => i.code !== locale.value)
      
-    })
+    // })
     return {
-      switchLocalePath, availableLocales
+      // switchLocalePath,
+      //  availableLocales
     }
   }
 }
